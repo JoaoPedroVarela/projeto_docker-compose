@@ -94,7 +94,7 @@ services:
 
   api:
     build:
-      context: "./api"  # Constrói a imagem da API a partir da pasta "api"
+      context: "./api"  # Constrói a imagem da API a partir do Dockerfile da pasta "api"
     container_name: node-container  # Nome do container
     restart: always  # Reinicia automaticamente se cair
     volumes:
