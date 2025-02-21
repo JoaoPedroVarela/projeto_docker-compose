@@ -1,0 +1,55 @@
+version: '3.7'
+
+services:
+  db:
+    image: mysql
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: 123456
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./api/db/script.sql:/docker-entrypoint-initdb.d/script.sql
+    networks:
+      - minha-rede
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      timeout: 10s
+      retries: 5
+
+  api:
+    build:
+      context: "./api"
+    container_name: node-container
+    restart: always
+    volumes:
+       - ./api:/home/node/app
+    networks:
+      - minha-rede
+    ports:
+      - "9001:9001"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  web:
+    image: "php:7.2-apache"
+    container_name: php-container
+    restart: always
+    volumes:
+      - ./api/website:/var/www/html
+    networks:
+      - minha-rede
+    ports:
+      - "8888:80"
+    depends_on:
+      - db
+      - api
+
+volumes:
+  mysql-data:
+    name: mysql-data
+
+networks:
+  minha-rede:
+    name: minha-rede

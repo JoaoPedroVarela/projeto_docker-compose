@@ -7,7 +7,7 @@ WORKDIR /home/node/app
 COPY package*.json ./
 
 # Instala as dependências
-RUN npm install
+RUN npm install --include=dev && npm install -g nodemon
 
 # Copia o restante do código
 COPY . .
