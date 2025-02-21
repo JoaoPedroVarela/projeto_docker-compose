@@ -1,11 +1,16 @@
 # Documentação
-Este projeto é um exemplo prático para quem está começando a trabalhar com Docker. Ele demonstra como containerizar uma aplicação simples que integra um front-end em PHP com uma API em Node.js. O objetivo é fornecer um ambiente de desenvolvimento isolado e fácil de reproduzir, utilizando Docker Compose para orquestrar os containers.
+
+---
+
+Este projeto é um exemplo prático para quem está começando a trabalhar com Docker. Ele demonstra como containerizar uma aplicação simples que integra um front-end em PHP com uma API em Node.js e um banco de dados MySQL. O objetivo é fornecer um ambiente de desenvolvimento isolado e fácil de reproduzir, utilizando Docker Compose para orquestrar os containers.
+
 ---
 
 #### **O que tem no projeto?**
 1. **Front-end**: Uma página em PHP que mostra uma lista de jogos.
 2. **Back-end**: Uma API em Node.js que fornece os dados dos jogos.
-3. **Docker**: Tudo está containerizado para rodar fácil em qualquer máquina.
+3. **Banco de Dados**: Um banco de dados MySQL para armazenar as informações dos jogos.
+4. **Docker**: Tudo está containerizado para rodar fácil em qualquer máquina.
 
 ---
 
