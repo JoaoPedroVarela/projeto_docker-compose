@@ -52,13 +52,19 @@ Este projeto é um exemplo prático para quem está começando a trabalhar com D
 #### **Estrutura do Projeto**
 ```
 projeto_docker-compose/
-├── api/            # Código e configurações do projeto
-│   ├── db/         # Scripts do banco de dados
-|   ├── node_modules/   # Módulos do node
-|   ├── src/   # Código da API em Node.js
-│   └── website/    # Código do front-end em PHP
-├── docker-compose.yml  # Configuração dos containers
-└── README.md       # Esta documentação
+├── api/                  # Pasta da API em Node.js
+│   ├── db/               # Scripts do banco de dados
+│   │   └── script.sql    # Script SQL para inicialização do banco
+│   ├── node_modules/     # Módulos do Node.js (gerado automaticamente)
+│   ├── src/              # Código fonte da API
+│   │   └── index.js      # Arquivo principal da API
+│   ├── website/          # Código do front-end em PHP
+│   │   └── index.php     # Arquivo principal do front-end
+│   ├── Dockerfile        # Configuração do container Node.js
+│   ├── package.json      # Dependências e scripts do Node.js
+│   └── package-lock.json # Versões exatas das dependências (gerado automaticamente)
+├── docker-compose.yml    # Configuração dos containers
+└── README.md             # Esta documentação
 ```
 
 ---
