@@ -63,12 +63,12 @@ projeto_docker-compose/
 │   ├── node_modules/     # Módulos do Node.js (gerado automaticamente)
 │   ├── src/              # Código fonte da API
 │   │   └── index.js      # Arquivo principal da API
-│   ├── website/          # Código do front-end em PHP
-│   │   └── index.php     # Arquivo principal do front-end
 │   ├── Dockerfile        # Configuração do container Node.js
 │   ├── package.json      # Dependências e scripts do Node.js
 │   └── package-lock.json # Versões exatas das dependências (gerado automaticamente)
 ├── docker-compose.yml    # Configuração dos containers
+├── website/          # Código do front-end em PHP
+│   └── index.php     # Arquivo principal do front-end
 └── README.md             # Esta documentação
 ```
 
@@ -117,7 +117,7 @@ services:
     container_name: php-container  # Nome do container
     restart: always  # Reinicia automaticamente se cair
     volumes:
-      - ./api/website:/var/www/html  # Sincroniza o código do front-end com o container
+      - ./website:/var/www/html  # Sincroniza o código do front-end com o container
     networks:
       - minha-rede  # Conecta à rede "minha-rede"
     ports:

@@ -37,7 +37,7 @@ services:
     container_name: php-container
     restart: always
     volumes:
-      - ./api/website:/var/www/html
+      - ./website:/var/www/html
     networks:
       - minha-rede
     ports:
